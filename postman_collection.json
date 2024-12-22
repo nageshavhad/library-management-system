@@ -1,0 +1,448 @@
+{
+    "info": {
+      "name": "Library Management System",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "User",
+        "item": [
+          {
+            "name": "Create User",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"username\": \"nagesh\",\n  \"email\": \"nagesh@gmail.com\",\n  \"password\": \"password\",\n  \"is_librarian\": false\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/user/create_user",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "user",
+                  "create_user"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Login",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"username\": \"nagesh\",\n  \"password\": \"password\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/user/login",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "user",
+                  "login"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get User",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "url": {
+                "raw": "http://localhost:5000/user/get_user/1",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "user",
+                  "get_user",
+                  "1"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update User",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"username\": \"updateduser\",\n  \"email\": \"updateduser@example.com\",\n  \"password\": \"newpassword\",\n  \"is_librarian\": true\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/user/update_user/1",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "user",
+                  "update_user",
+                  "1"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Delete User",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "url": {
+                "raw": "http://localhost:5000/user/delete_user/1",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "user",
+                  "delete_user",
+                  "1"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Request Book",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"book_id\": 1\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/user/request_book",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "user",
+                  "request_book"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Submit Book",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"request_id\": 1\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/user/submit_book",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "user",
+                  "submit_book"
+                ]
+              }
+            }
+          },
+          {
+            "name": "List Requests",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "url": {
+                "raw": "http://localhost:5000/user/list_requests",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "user",
+                  "list_requests"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Librarian",
+        "item": [
+          {
+            "name": "Create Book",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"title\": \"New Book\",\n  \"author\": \"Author Name\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/librarian/create_book",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "librarian",
+                  "create_book"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Book",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "url": {
+                "raw": "http://localhost:5000/librarian/get_book/1",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "librarian",
+                  "get_book",
+                  "1"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get All Books",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "url": {
+                "raw": "http://localhost:5000/librarian/get_all_books",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "librarian",
+                  "get_all_books"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Book",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"title\": \"Updated Book\",\n  \"author\": \"Updated Author\",\n  \"available\": true\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/librarian/update_book/1",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "librarian",
+                  "update_book",
+                  "1"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Delete Book",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "url": {
+                "raw": "http://localhost:5000/librarian/delete_book/1",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "librarian",
+                  "delete_book",
+                  "1"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Approve Request",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"request_id\": 1\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/librarian/approve_request",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "librarian",
+                  "approve_request"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Accept Submission",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{jwt_token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"request_id\": 1\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/librarian/accept_submission",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "5000",
+                "path": [
+                  "librarian",
+                  "accept_submission"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
